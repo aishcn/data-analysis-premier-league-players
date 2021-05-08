@@ -1,0 +1,47 @@
+\usepackage{graphicx}
+\usepackage{amssymb,amsmath,amsthm,mathrsfs}
+\usepackage{booktabs}   %%%% WARNING: REMOVE fancyhdr package. Reason: http://tex.stackexchange.com/questions/141296/conflict-between-exam-class-and-fancyhdr-package
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage[makeroom]{cancel}
+%\usepackage[authoryear,comma,longnamesfirst,sectionbib]{natbib}
+% \usepackage[numbers]{natbib}
+\usepackage[framemethod=TikZ]{mdframed}
+\mdfdefinestyle{studentanswerframe}{%
+    linecolor=black,
+    outerlinewidth=2pt,
+    innertopmargin=0.5\baselineskip,
+    innerbottommargin=0.5\baselineskip,
+    innerrightmargin=20pt,
+    innerleftmargin=20pt}
+
+
+
+
+% This gives you control over how far down in the hierarchy the
+% table of contents will print.
+\setcounter{secnumdepth}{3}
+
+ 
+\usepackage{url}
+%%%%% URL package fix %%%%%
+\begingroup
+\makeatletter
+\g@addto@macro{\UrlSpecials}{%
+  \endlinechar=13 \catcode\endlinechar=12
+  \do\%{\Url@percent}\do\^^M{\break}}
+ \catcode13=12 %
+ \gdef\Url@percent{\@ifnextchar^^M{\@gobble}{\mathbin{\mathchar`\%}}}%
+\endgroup %
+
+ 
+
+
+\graphicspath{{./figures/}}
+
+\newcounter{xxx}
+\setcounter{xxx}{0}
+\newcommand\XXX[1]{{\bf \em \addtocounter{xxx}{1} (\thexxx) [[#1]]}}
+
