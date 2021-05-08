@@ -1,0 +1,54 @@
+%  stat305hw.sty  Benjamin Bloem-Reddy, 2020/06/24
+%
+%  Style file for STAT 305 assignments
+
+\makeatletter
+\def\input@path{{macros/}}
+%or: \def\input@path{{/path/to/folder/}{/path/to/other/folder/}}
+\makeatother
+
+\input{typesetting-macros}
+\graphicspath{{./figures/}}
+\usepackage{hyperref}
+
+\usepackage[utf8]{inputenc}
+
+% for printing code
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{codebackcolour}{rgb}{0.92,0.92,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{codebackcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,     
+    language=R,            
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+% for including images with minimal freedom for resizing
+\newcommand{\includefig}[2][1.0]{%
+  \begin{center}
+  	\resizebox{#1\textwidth}{!}{
+  	  \includegraphics{#2}
+  	}
+  \end{center}
+}
